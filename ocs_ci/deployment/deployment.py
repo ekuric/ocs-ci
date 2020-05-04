@@ -731,7 +731,7 @@ class Deployment(object):
             "noobaas.noobaa.io ocsinitializations.ocs.openshift.io  "
             "storageclusterinitializations.ocs.openshift.io "
             "storageclusters.ocs.openshift.io  --wait=true --timeout=5m"
-         )
+        )
 
 
 def create_catalog_source(image=None, ignore_upgrade=False):
