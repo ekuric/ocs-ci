@@ -35,7 +35,6 @@ from ocs_ci.ocs.resources.packagemanifest import (
 from ocs_ci.ocs.resources.pod import (
     get_all_pods,
     validate_pods_are_respinned_and_running_state,
-    get_pvc_name,
     delete_pods)
 from ocs_ci.ocs.resources.pvc import get_all_pvcs
 from ocs_ci.ocs.resources.storage_cluster import get_all_storageclass
@@ -677,7 +676,7 @@ class Deployment(object):
                     break
 
         # Removing monitoring stack from OpenShift Container Storage
-        remove_monitoring_stack_from_ocs()
+        remove_monitoring_stack_from_ocs(sc_list)
 
         # Removing OpenShift Container Platform registry from OpenShift Container Storage
         remove_ocp_registry_from_ocs(self.platform)
